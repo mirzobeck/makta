@@ -1025,7 +1025,7 @@ async def news(message: types.Message, state: FSMContext):
     image = message.photo[-1].file_id
     cap = message.caption
     lstt.append({'photo' : image, 'caption' : cap})
-    await message.answer("✅ Qo'shildi")
+    await message.answer("✅ Qo'shildi", reply_markup=soroqq)
     p = 0
     for i in lstt:
         p+=1
@@ -1038,7 +1038,7 @@ async def news(message: types.Message, state: FSMContext):
     image = message.video.file_id
     cap = message.caption
     lstt.append({'photo' : image, 'caption' : cap})
-    await message.answer("✅ Qo'shildi")
+    await message.answer("✅ Qo'shildi", reply_markup=soroqq)
     p = 0
     for i in lstt:
         p+=1
@@ -1069,7 +1069,7 @@ async def news(message: types.Message, state: FSMContext):
 async def news(message: types.Message, state: FSMContext):
     cap = message.text
     lstt.append({'photo' : 0, 'caption' : cap})
-    await message.answer("✅ Qo'shildi")
+    await message.answer("✅ Qo'shildi", reply_markup=soroqq)
     p = 0
     for i in lstt:
         p+=1
