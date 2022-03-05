@@ -980,7 +980,7 @@ async def news(call: types.CallbackQuery):
             except:
                 await call.message.answer(i['caption'])
                 await asyncio.sleep(0.05)
-        await call.message.answer(f"Eng so'nggi {len(lstt)} ta yangilikni chiqardik 👆 Menyu pastda 👇", reply_markup=menu)
+        await call.message.answer(f"Hurmatli ADMIN bot'ga eng so'nggi qo'shilgan {len(lstt)} ta yangilikni chiqardik 👆", reply_markup=menu)
 
 
 
