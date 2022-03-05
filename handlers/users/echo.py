@@ -1056,13 +1056,13 @@ async def news(message: types.Message, state: FSMContext):
 async def news(message: types.Message, state: FSMContext):
     await state.finish()
     lstt.pop(-1)
-    await message.answer("O'chirildi ✅\n\nKerakli bo'limni tanlang:",reply_markup=nwb)
+    await message.answer("O'chirildi ✅\n\nKerakli bo'limni tanlang:",reply_markup=nwb2)
 
 
 @dp.message_handler(text='❌ Barcha yangilikni tozalash ❌', state=lst.news)
 async def news(message: types.Message, state: FSMContext):
     await state.finish()
-    await message.answer("Tozalandi ✅\n\nKerakli bo'limni tanlang:",reply_markup=nwb)
+    await message.answer("Tozalandi ✅\n\nKerakli bo'limni tanlang:",reply_markup=nwb2)
     lstt.clear()
 
 @dp.message_handler(state=lst.news)
