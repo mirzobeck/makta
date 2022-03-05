@@ -1052,18 +1052,6 @@ async def news(message: types.Message, state: FSMContext):
     await message.answer("Kerakli bo'limni tanlang:", reply_markup=menu)
 
 
-@dp.message_handler(state=lst.news)
-async def news(message: types.Message, state: FSMContext):
-    cap = message.text
-    lstt.append({'photo' : 0, 'caption' : cap})
-    await message.answer("✅ Qo'shildi")
-    p = 0
-    for i in lstt:
-        p+=1
-        if p == 10:
-            lstt.pop(0)
-
-
 @dp.message_handler(text="❌ Oxirgi yuborilgan yangilikni o'chirish ❌", state=lst.news)
 async def news(message: types.Message, state: FSMContext):
     await state.finish()
@@ -1076,6 +1064,20 @@ async def news(message: types.Message, state: FSMContext):
     await state.finish()
     await message.answer("Tozalandi ✅\n\nKerakli bo'limni tanlang:",reply_markup=nwb)
     lstt.clear()
+
+@dp.message_handler(state=lst.news)
+async def news(message: types.Message, state: FSMContext):
+    cap = message.text
+    lstt.append({'photo' : 0, 'caption' : cap})
+    await message.answer("✅ Qo'shildi")
+    p = 0
+    for i in lstt:
+        p+=1
+        if p == 10:
+            lstt.pop(0)
+
+
+
 
 
 
